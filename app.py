@@ -4,7 +4,7 @@ import plotly.express as px
 
 car_data = pd.read_csv('vehicles_us.csv')
 # Encabezado
-st.header("Análisis de Vehículos Usados")
+st.header("Análisis de Vehículos")
 # Casilla de verificación para histograma
 build_histogram = st.checkbox('Construir un histograma')
 if build_histogram:
