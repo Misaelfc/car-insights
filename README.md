@@ -16,8 +16,8 @@ Uso
 
 	3.	Abre el enlace que aparece en la terminal para acceder a la aplicación web en tu navegador.
 
-Estructura del proyecto
-.
+Estructura del proyecto.
+
 ├── README.md
 
 ├── app.py
