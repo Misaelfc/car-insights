@@ -17,21 +17,10 @@ Uso
 	3.	Abre el enlace que aparece en la terminal para acceder a la aplicación web en tu navegador.
 
 Estructura del proyecto
-
-car-insights/
-
-notebooks/
-
-EDA.ipynb           # Análisis exploratorio en Jupyter
-
-app.py                  # Aplicación principal de Streamlit
-
-vehicles_us.csv         # Dataset usado
-
-requirements.txt        # Dependencias del proyecto
-
-README.md               # Documentación del proyecto
-
-vehicles_env/           # Entorno virtual de Python para el proyecto
-
-.gitignore
+.
+├── README.md
+├── app.py
+├── vehicles_us.csv
+├── requirements.txt
+└── notebooks
+    └── EDA.ipynb
