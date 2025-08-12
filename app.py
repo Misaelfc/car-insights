@@ -3,6 +3,7 @@ import pandas as pd
 import plotly.express as px
 
 car_data = pd.read_csv('vehicles_us.csv')
+st.write(car_data.columns)
 # Encabezado
 st.header("Análisis de Vehículos Usados")
 # Casilla de verificación para histograma
@@ -26,12 +27,11 @@ if build_scatter:
     st.plotly_chart(fig, use_container_width=True)
 
 # Casilla para comparar precios de vehículos entre manufactureras
-compare_prices = st.checkbox('Comparar precios de vehículos')
-if compare_prices:
+build_prices = st.checkbox('Comparar precios de vehículos')
+if build_prices:
     st.write('Comparación de precios de vehículos entre diferentes manufactureras')
     fig = px.box(
-        car_data, x="manufacturer", y="price",
+        car_data, x="model", y="price", color="condition",
         title="Comparación de precios por fabricante"
     )
-    fig.update_layout(xaxis_title="Fabricante", yaxis_title="Precio")
     st.plotly_chart(fig, use_container_width=True)
