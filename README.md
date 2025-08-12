@@ -19,18 +19,19 @@ Uso
 Estructura del proyecto
 
 car-insights/
-├── notebooks/
 
-│   └── EDA.ipynb           # Análisis exploratorio en Jupyter
+notebooks/
 
-├── app.py                  # Aplicación principal de Streamlit
+EDA.ipynb           # Análisis exploratorio en Jupyter
 
-├── vehicles_us.csv         # Dataset usado
+app.py                  # Aplicación principal de Streamlit
 
-├── requirements.txt        # Dependencias del proyecto
+vehicles_us.csv         # Dataset usado
 
-├── README.md               # Documentación del proyecto
+requirements.txt        # Dependencias del proyecto
 
-├── vehicles_env/           # Entorno virtual de Python para el proyecto
+README.md               # Documentación del proyecto
 
-└── .gitignore
+vehicles_env/           # Entorno virtual de Python para el proyecto
+
+.gitignore
