@@ -24,3 +24,14 @@ if build_scatter:
         title="Precio vs Kilometraje según condición del vehículo"
     )
     st.plotly_chart(fig, use_container_width=True)
+
+# Casilla para comparar precios de vehículos entre manufactureras
+compare_prices = st.checkbox('Comparar precios de vehículos')
+if compare_prices:
+    st.write('Comparación de precios de vehículos entre diferentes manufactureras')
+    fig = px.box(
+        car_data, x="manufacturer", y="price",
+        title="Comparación de precios por fabricante"
+    )
+    fig.update_layout(xaxis_title="Fabricante", yaxis_title="Precio")
+    st.plotly_chart(fig, use_container_width=True)
