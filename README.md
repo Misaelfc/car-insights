@@ -19,8 +19,12 @@ Uso
 Estructura del proyecto
 .
 ├── README.md
+
 ├── app.py
+
 ├── vehicles_us.csv
+
 ├── requirements.txt
+
 └── notebooks
-    └── EDA.ipynb
+	└── EDA.ipynb
