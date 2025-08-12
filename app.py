@@ -25,12 +25,26 @@ if build_scatter:
     )
     st.plotly_chart(fig, use_container_width=True)
 
-# Casilla para comparar precios de vehículos entre manufactureras
-build_prices = st.checkbox('Comparar precios de vehículos')
+# Casilla para comparar precios de vehículos entre modelos
+build_prices = st.checkbox('Comparar precios entre dos modelos de vehículos')
 if build_prices:
-    st.write('Comparación de precios de vehículos entre diferentes manufactureras')
+    st.write('Comparación de precios entre dos modelos seleccionados')
+    # Lista única y ordenada de modelos para seleccionar
+    modelos = sorted(car_data['model'].dropna().unique())
+
+    modelo1 = st.selectbox(
+        'Selecciona el primer modelo', modelos, index=0
+    )
+    modelo2 = st.selectbox(
+        'Selecciona el segundo modelo',
+        modelos, index=1 if len(modelos) > 1 else 0
+    )
+
+    # Filtrar datos por modelos seleccionados
+    df_filtrado = car_data[car_data['model'].isin([modelo1, modelo2])]
     fig = px.box(
-        car_data, x="model", y="price", color="condition",
-        title="Comparación de precios por fabricante"
+        df_filtrado, x="model", y="price", color="condition",
+        title=f"Comparación de precios: {modelo1} vs {modelo2}",
+        labels={"model": "Modelo", "price": "Precio"}
     )
     st.plotly_chart(fig, use_container_width=True)
